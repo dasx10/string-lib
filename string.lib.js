@@ -1,17 +1,25 @@
-String.prototype.log = function(){
+String.prototype.log = function() {
     console.log(this);
     return this;
 }
 
-String.prototype.toCapitalize = function(){
+String.prototype.toCapitalize = function() {
     let strArr = this.split('');
     if(strArr[0]) strArr[0] = strArr[0].toUpperCase();
     return strArr.join('');
 }
 
-String.prototype.toCapitalizeAll = function(){
+String.prototype.toJson = function() {
+    try{
+        return JSON.parse(this);
+    } catch {
+        return this;
+    }
+}
+
+String.prototype.toCapitalizeAll = function() {
     let strArr = this.split(' ');
-    return strArr.map((str)=> str.toCapitalize()).join(' ');
+    return strArr.map((str) => str.toCapitalize()).join(' ');
 }
 
 String.prototype.reverse = function() {
@@ -20,4 +28,8 @@ String.prototype.reverse = function() {
 
 String.prototype.limit = function(n = 0) {
     return this.slice(0, n);
+}
+
+String.prototype.isEmpty = function() {
+    return this.replace(/[\n|\t| ]/g,'')==='';
 }
