@@ -5,7 +5,7 @@ interface String {
     toCapitalizeAll():string;
     toCapitalize():string;
 
-	repeat():string;
+	repeat(num:number):string;
     reverse():string;
     limit():string;
 
@@ -15,7 +15,7 @@ interface String {
     toRegEx(params:string):RegExp;
     toJson():string|object;
 
-    toSplit(n:number):Array;
+    toSplit(n:number):Array<string>;
 
     toCharCodes():Int32Array;
 }
