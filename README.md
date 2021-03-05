@@ -12,6 +12,11 @@ or
 <script src="https://unpkg.com/string-library-pr@1.1.0/index.js" />
 ```
 
+if use TypeScript
+this has types
+
+`import 'string-library-pr/@types'`
+
 ## use
 
 ```

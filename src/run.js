@@ -1,2 +1,2 @@
 require('../index');
-'a'.toSplit()[0]
+'a'
