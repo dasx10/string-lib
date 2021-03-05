@@ -1,7 +1,5 @@
-# gulp converter pixel to rem
-[![Build Status](https://travis-ci.com/dasx10/gulp-px2rem-converter.svg?branch=master)](https://travis-ci.com/dasx10/gulp-px2rem-converter)
-----
-Convert all `px` to `rem`
+# string library prototype
+
 ## install
 
 ```
@@ -56,6 +54,6 @@ import 'string-library-pr';
 'abcd'.toCharCodes() // Int32Array(4) [ 97, 98, 99, 100 ]
 
 
-'ab' // output to console 'ab' this equal console.log('ab')
+'ab'.log() // output to console 'ab' this equal console.log('ab')
 ```
 
