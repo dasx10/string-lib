@@ -1,7 +1,7 @@
 {
   "name": "string-library-pr",
-  "version": "1.1.0",
-  "description": "prototype lib to string",
+  "version": "1.1.1",
+  "description": "prototype library to string",
   "main": "index.js",
   "scripts": {
     "test": "jest",

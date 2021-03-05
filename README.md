@@ -6,6 +6,12 @@
 npm i string-library-pr
 ```
 
+or
+
+```
+<script src="https://unpkg.com/string-library-pr@1.1.0/index.js" />
+```
+
 ## use
 
 ```
