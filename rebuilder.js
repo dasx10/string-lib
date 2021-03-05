@@ -1,14 +1,3 @@
-String.prototype.log = function() {
-    console.log(this);
-    return this;
-}
-
-String.prototype.toCapitalize = function() {
-    let strArr = this.split('');
-    if(strArr[0]) strArr[0] = strArr[0].toUpperCase();
-    return strArr.join('');
-}
-
 String.prototype.toJson = function() {
     try{
         return JSON.parse(this);
@@ -17,29 +6,16 @@ String.prototype.toJson = function() {
     }
 }
 
-String.prototype.toCapitalizeAll = function() {
-    let strArr = this.split(' ');
-    return strArr.map((str) => str.toCapitalize()).join(' ');
-}
-
-String.prototype.reverse = function() {
-    return this.split('').reverse().join('');
-}
-
-String.prototype.limit = function(n = 0) {
-    return this.slice(0, n);
-}
-
-String.prototype.isEmpty = function() {
-    return this.replace(/[\n|\t| ]/g,'')==='';
-}
-
 String.prototype.toCharCodes = function() {
     let arr = new Int32Array(this.length)
     for(let i = 0; i < this.length; i++){
         arr[i] = this.charCodeAt(i)
     }
     return arr;
+}
+
+String.prototype.toRegEx = function(params){
+    return new RegExp(this, params)
 }
 
 String.prototype.toSplit = function(n = 2) {
