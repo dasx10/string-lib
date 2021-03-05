@@ -5,20 +5,20 @@ Convert all `px` to `rem`
 ## install
 
 ```
-npm i string-lib
+npm i string-library-pr
 ```
 
 ## use
 
 ```
-require('string-lib');
+require('string-library-pr');
 
 ```
 
 if emj or module
 
 ```
-import 'string-lib';
+import 'string-library-pr';
 ```
 
 ## example

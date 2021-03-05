@@ -1,5 +1,5 @@
 {
-  "name": "string-lib",
+  "name": "string-library-pr",
   "version": "1.0.0",
   "description": "prototype lib to string",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dasx10/string-lib.git"
+    "url": "git+https://github.com/dasx10/string-library-pr.git"
   },
   "keywords": [
     "string",
@@ -18,9 +18,9 @@
   "author": "Yevhenii Kleshchev <dasx10@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dasx10/string-lib/issues"
+    "url": "https://github.com/dasx10/string-library-pr/issues"
   },
-  "homepage": "https://github.com/dasx10/string-lib#readme",
+  "homepage": "https://github.com/dasx10/string-library-pr#readme",
   "devDependencies": {
     "jest": "^26.6.3"
   }
