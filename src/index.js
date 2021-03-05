@@ -1,10 +1,5 @@
 
-(function(){
-	var reg = function(name,cb){
-		if(String.prototype[name])return;
-		String.prototype[name]=cb;
-	}
-
+(function(){var reg=function(name,cb){if(String.prototype[name])return;String.prototype[name]=cb;}
 	// formater
 	reg('toCapitalize',function() {
 		let strArr = this.split('');
@@ -49,7 +44,6 @@
 	})
 
 	// rebuilder
-
 	reg('toJson',function() {
 		try{
 			return JSON.parse(this);
@@ -66,7 +60,7 @@
 		return arr;
 	})
 
-	reg('toRegEx',function(params){
+	reg('toRegExp',function(params){
 		return new RegExp(this, params)
 	})
 
@@ -92,7 +86,6 @@
 	})
 
 	// helpers
-
 	reg('log',function() {
 		console.log(this);
 		return this;
@@ -106,10 +99,88 @@
 		return this.replace(/[\n|\t| ]/g,'')==='';
 	})
 
+	reg('isPalindrome',function() {
+		return this.toString() === this.reverse().toString();
+	})
+
+	reg('isWord', function(){
+		return this.split(' ').length === 1 && this.split('\n').length === 1 && this.split('\t').length === 1
+	})
+
+	reg('isHasNumbers', function(){
+		return /[0-9]/.test(this)
+	})
+
+	reg('isHasEmails', function(){
+		return /[a-z|A-Z|0-9|-|_]+@+[a-z|A-Z|0-9|-|_]+.[a-z|A-Z|0-9|-|_]+[^ ]/.test(this)
+	})
+
+	reg('isEmail',function(){
+		return this.isWord() && this.isHasEmails()
+	})
+
+	reg('isHasUrls',function(){
+		return /[a-z|A-Z|0-9]+:\/\//.test(this) || this.isEmail()
+	})
+
+	reg('isUrl',function(){
+		return this.isWord() && this.isHasUrls()
+	})
+
+	reg('isJson',function(){
+		try{
+			JSON.parse(this);
+			return true
+		}catch{
+			return false
+		}
+	})
+
+	reg('getElementByTagName',function(tagName = ''){
+		return `<${tagName}[^你]+<\/${tagName}>|<${tagName}[^\/>]+\/>|<${tagName}\/>`.toRegExp().exec(this)[0]||''
+	})
+
 	reg('count',function(str = ''){
 		if(str.length){
 			return this.split(str).length -1
 		}
 		return this.length
+	})
+
+	reg('countLines',function(){
+		return this.split('\n').length
+	})
+
+	reg('countSpaces',function(){
+		return this.split(' ').length
+	})
+
+	reg('countTags',function(tagName){
+		if(tagName){
+			tagName = tagName.replace(/[^a-z|[A-Z]]/g,'');
+			if(tagName){
+				return this.trim().split(`<${tagName}[^\/]+>|<[^<\/]+\/>`.toRegExp()).length -1
+			}
+			return 0;
+		}
+		return this.trim().split(/<[^\/]+>|<[^<\/]+\/>/).length -1
+	})
+
+	reg('countNumbers',function(number){
+		if(number){
+			if(typeof number === 'number'){
+				number = ""+number;
+			}
+			if(typeof number === 'string'){
+				number=""+parseInt(number);
+				if(number){
+					return this.split((number + '[^0-9]').toRegExp()).length -1
+				}
+				return 0;
+			} else {
+				return this.split(number).length -1
+			}
+		}
+		return this.split(/[0-9]+/).length -1
 	})
 })();

@@ -12,10 +12,12 @@ or
 <script src="https://unpkg.com/string-library-pr@1.1.0/index.js" />
 ```
 
-if use TypeScript
+if use `TypeScript`
 this has types
 
-`import 'string-library-pr/@types'`
+```
+import 'string-library-pr/@types';
+```
 
 ## use
 
@@ -74,3 +76,44 @@ import 'string-library-pr';
 'ab'.log() // output to console 'ab' this equal console.log('ab')
 ```
 
+## example method into interface
+
+```
+interface String {
+    log():string;
+
+    toCamelCase(symbol?:string):string;
+    toCapitalizeAll():string;
+    toCapitalize():string;
+
+	repeat(count?:number):string;
+    reverse():string;
+    limit():string;
+
+    count(string?:string):number;
+    countLines():number;
+    countSpaces():number;
+    countTags(tagName?:string):number;
+	countNumbers(number?:number|string|RegExp):number;
+
+	getElementByTagName(tagName:string):string
+
+    isEmpty():boolean;
+	isPalindrome():boolean;
+	isEmail():boolean;
+	isUrl():boolean;
+	isWord():boolean;
+	isJson():boolean;
+
+	isHasNumbers():boolean;
+	isHasEmails():boolean;
+	isHasUrls():boolean;
+
+    toRegExp(RegExpFlags?:string):RegExp;
+    toJson():string|object;
+
+    toSplit(n?:number):Array<string>;
+
+    toCharCodes():Int32Array;
+}
+```
