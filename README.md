@@ -29,6 +29,12 @@ import 'string-library-pr';
 'abcd ab'.reverse() // 'ba dcba'
 'abcd ab'.reverse().toCapitalize() // 'Ba dcba'
 
+'abcd'.repeat() // 'abcdabcd'
+'abcd'.repeat(1) // 'abcdabcd'
+'abcd'.repeat(3) // 'abcdabcdabcdabcd'
+'abcd'.repeat(0) // 'abcd'
+'abcd'.repeat(-1) // 'abcd'
+
 'abcda'.count() // 5
 'abcda'.count('a') // 2
 'abcda'.count('b') // 1

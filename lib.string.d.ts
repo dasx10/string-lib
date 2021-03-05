@@ -5,6 +5,7 @@ interface String {
     toCapitalizeAll():string;
     toCapitalize():string;
 
+	repeat():string;
     reverse():string;
     limit():string;
 

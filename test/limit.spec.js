@@ -1,4 +1,4 @@
-require('../index');
+require('../src/index');
 
 test('limit',()=>{
 	expect('aaaaa'.limit(1)).toBe("a");

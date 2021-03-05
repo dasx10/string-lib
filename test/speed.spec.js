@@ -1,5 +1,5 @@
 
-require('../index');
+require('../src/index');
 let text = require('./testText');
 
 function speedTest(name, options){
