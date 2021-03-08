@@ -15,22 +15,22 @@ Boolean.prototype.isFalse = function(cb = () => null){
 }
 
 Boolean.prototype.if = function(cb){
-    if(this.valueOf()){
-        let res = cb(this);
-        return res ?? this;
-    }
     this.__proto__.else = function(cb){
-        // console.log(this.valueOf());
+		delete this.__proto__.else;
         if(!this.valueOf()){
             let res = cb(this);
             return res ?? this;
         }
     }
+    if(this.valueOf()){
+        let res = cb(this);
+        return res ?? this;
+    }
     return this;
 }
 
 Boolean.prototype.reverse = function(){
-    return !this;
+    return !this.valueOf();
 }
 
 Boolean.prototype.log = function(){
@@ -61,6 +61,5 @@ Boolean.prototype.nand = function(bool) {
 // .log()
 // .else(()=>console.log(0))
 
-false
-.nand(false)
-.log()
+true
+.if(e=>e.reverse().else(e=>console.log('a',e.reverse())))

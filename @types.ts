@@ -15,7 +15,8 @@ interface String {
     countTags(tagName?:string):number;
 	countNumbers(number?:number|string|RegExp):number;
 
-	getElementByTagName(tagName:string):string
+	getElementByTagName(tagName?:string):string
+	getElementsByTagName(tagName?:string):Array<string>
 
     isEmpty():boolean;
 	isPalindrome():boolean;

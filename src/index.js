@@ -137,7 +137,24 @@
 	})
 
 	reg('getElementByTagName',function(tagName = ''){
-		return `<${tagName}[^你]+<\/${tagName}>|<${tagName}[^\/>]+\/>|<${tagName}\/>`.toRegExp().exec(this)[0]||''
+		if(!tagName) return '';
+		tagName.replace(/[^a-z|A-Z]/g,'');
+		if(!tagName) return '';
+		return `<${tagName}[^你]+<\/${tagName}>|<${tagName}[^\/>]+\/>|<${tagName}\/>`.toRegExp().exec(this)[0]||'';
+	})
+
+	reg('getElementsByTagName',function(tagName = ''){
+		let text = this;
+		const XMLElements = [];
+		const finder = function(){
+			let XMLElement = text.getElementByTagName();
+			if(XMLElement){
+				XMLElements.push(XMLElement);
+				text.replace(XMLElement,'');
+				finder()
+			}
+		}
+		return XMLElements;
 	})
 
 	reg('count',function(str = ''){
